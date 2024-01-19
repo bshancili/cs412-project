@@ -69,10 +69,15 @@ A part of the resulted table is shown below.
 ### **Regression Algorithms Implementation**
 
 **Base Case:** A regression algortihm that is provided to us by the instructor. We have used this algorithm as a benchmark against our own implementations. 
+
 **Linear Regression:** A baseline regression algorithm used for comparison.
+
 **Decision Tree Regression:** A non-linear regression algorithm that uses a decision tree to partition the data.
+
 **Random Forest Regression:** An ensemble learning method that constructs multiple decision trees and merges their predictions to improve accuracy.
+
 **k Nearest Neighbors (KNN) Regression:** A non-parametric method used for regression tasks, which predicts the value of a data point by averaging the values of its k nearest neighbors.
+
 ## **Model Evaluation**
 We evaluated the performance of each regression algorithm using metrics such as Mean Squared Error (MSE), Mean Absolute Error (MAE), and R-squared (R2) score on both the training and testing datasets. 
 
@@ -88,27 +93,19 @@ The analysis of regression algorithms yielded insightful findings, with Random F
 
 ## Model Performance Comparison
 
-- **Decision Tree:**
-  - Train MSE: 0.005
-  - Train R2: 0.99
-  - Test MSE: 109.92
-  - Test R2: -3.68
+### **Decision Tree**
 
   The Decision Tree model exhibited excellent performance on the training data but suffered from overfitting and poor generalization to unseen data. Hyperparameter tuning, including setting random_state to 0 and splitter to "random," improved test performance with a Test MSE of 41.86 and Test R2 of -0.78, while maintaining strong performance on the training set.
 
-- **Random Forest:**
-  - Train MSE: 6.29
-  - Train R2: 0.86
-  - Test MSE: 33.33
-  - Test R2: -0.42
+### **Random Forest:**
 
   The Random Forest model, even in its base case, outperformed the Decision Tree on both training and test datasets. Further hyperparameter tuning, such as setting bootstrap to False, max_features to 'sqrt,' and random_state to 0, resulted in significant improvement. The tuned model achieved a Train MSE of 0.005, Train R2 of 0.999, Test MSE of 35.28, and Test R2 of -0.50. Notably, these tuned implementations outperformed the base case.
-
-- **Overall Observations:**
-  - Decision Tree and Random Forest performed exceptionally well.
-  - Both tuned models surpassed the base case in terms of accuracy and generalization.
-  - Negative values for Test R2 across all implementations indicate challenges in generalizing to unseen data.
 
 ## Further Exploration
 
 While the tuned models show improved performance, the consistent negative values for the Test R2 metric suggest a need for further exploration. This could involve experimenting with more advanced techniques, conducting feature engineering, or exploring additional data sources to enhance the models' ability to generalize to unseen data.
+
+### **Overall Observations:**
+  - Decision Tree and Random Forest performed exceptionally well.
+  - Both tuned models surpassed the base case in terms of accuracy and generalization.
+  - Negative values for Test R2 across all implementations indicate challenges in generalizing to unseen data.
