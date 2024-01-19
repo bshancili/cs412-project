@@ -1,6 +1,11 @@
 # Overview
 This repository contains scripts and code used for a machine learning project aimed at predicting student grades based on interactions with ChatGPT. The project utilizes datasets consisting of ChatGPT conversation histories in HTML format and a CSV file containing student grades.
 
+# Team Contributions
+Barış Hancili - 27896 - Text Preprocessing, Feature Engineering, Prediction and Analysis
+
+Elif Gödüş - 29241 - Feature Engineering, Prediction and Analysis
+
 # Methodology
 ## **Text Preprocessing**
 
@@ -70,3 +75,40 @@ A part of the resulted table is shown below.
 **k Nearest Neighbors (KNN) Regression:** A non-parametric method used for regression tasks, which predicts the value of a data point by averaging the values of its k nearest neighbors.
 ## **Model Evaluation**
 We evaluated the performance of each regression algorithm using metrics such as Mean Squared Error (MSE), Mean Absolute Error (MAE), and R-squared (R2) score on both the training and testing datasets. 
+
+# Results
+
+The analysis of regression algorithms yielded insightful findings, with Random Forest outperforming other models and providing the most accurate predictions for the given task on both test and train datasets.
+
+| Model           | MSE Train | MSE Test | R2 Train | R2 Test |
+|-----------------|-----------|----------|----------|---------|
+| Base Case       | 1.5807    | 108.8336 | 0.9663   | -3.6389 |
+| Decision Tree   | 0.0051    | 41.8627  | 0.9999   | -0.7844 |
+| Random Forest   | 0.0051    | 35.2810  | 0.9999   | -0.5038 |
+
+## Model Performance Comparison
+
+- **Decision Tree:**
+  - Train MSE: 0.005
+  - Train R2: 0.99
+  - Test MSE: 109.92
+  - Test R2: -3.68
+
+  The Decision Tree model exhibited excellent performance on the training data but suffered from overfitting and poor generalization to unseen data. Hyperparameter tuning, including setting random_state to 0 and splitter to "random," improved test performance with a Test MSE of 41.86 and Test R2 of -0.78, while maintaining strong performance on the training set.
+
+- **Random Forest:**
+  - Train MSE: 6.29
+  - Train R2: 0.86
+  - Test MSE: 33.33
+  - Test R2: -0.42
+
+  The Random Forest model, even in its base case, outperformed the Decision Tree on both training and test datasets. Further hyperparameter tuning, such as setting bootstrap to False, max_features to 'sqrt,' and random_state to 0, resulted in significant improvement. The tuned model achieved a Train MSE of 0.005, Train R2 of 0.999, Test MSE of 35.28, and Test R2 of -0.50. Notably, these tuned implementations outperformed the base case.
+
+- **Overall Observations:**
+  - Decision Tree and Random Forest performed exceptionally well.
+  - Both tuned models surpassed the base case in terms of accuracy and generalization.
+  - Negative values for Test R2 across all implementations indicate challenges in generalizing to unseen data.
+
+## Further Exploration
+
+While the tuned models show improved performance, the consistent negative values for the Test R2 metric suggest a need for further exploration. This could involve experimenting with more advanced techniques, conducting feature engineering, or exploring additional data sources to enhance the models' ability to generalize to unseen data.
