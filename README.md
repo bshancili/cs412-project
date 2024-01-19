@@ -97,7 +97,7 @@ The analysis of regression algorithms yielded insightful findings, with Random F
 
   The Decision Tree model exhibited excellent performance on the training data but suffered from overfitting and poor generalization to unseen data. Hyperparameter tuning, including setting random_state to 0 and splitter to "random," improved test performance with a Test MSE of 41.86 and Test R2 of -0.78, while maintaining strong performance on the training set.
 
-### **Random Forest:**
+### **Random Forest**
 
   The Random Forest model, even in its base case, outperformed the Decision Tree on both training and test datasets. Further hyperparameter tuning, such as setting bootstrap to False, max_features to 'sqrt,' and random_state to 0, resulted in significant improvement. The tuned model achieved a Train MSE of 0.005, Train R2 of 0.999, Test MSE of 35.28, and Test R2 of -0.50. Notably, these tuned implementations outperformed the base case.
 
@@ -105,7 +105,7 @@ The analysis of regression algorithms yielded insightful findings, with Random F
 
 While the tuned models show improved performance, the consistent negative values for the Test R2 metric suggest a need for further exploration. This could involve experimenting with more advanced techniques, conducting feature engineering, or exploring additional data sources to enhance the models' ability to generalize to unseen data.
 
-### **Overall Observations:**
+### **Overall Observations**
   - Decision Tree and Random Forest performed exceptionally well.
   - Both tuned models surpassed the base case in terms of accuracy and generalization.
   - Negative values for Test R2 across all implementations indicate challenges in generalizing to unseen data.
